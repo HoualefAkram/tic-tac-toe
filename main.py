@@ -18,6 +18,10 @@ def winner():
 
 for i in range(9):  # main loop
     line, column, answer = int(input("enter line :")), int(input("enter column : ")), input("X,O :")
+    while game[line - 1][column - 1] == 'O' or game[line - 1][column - 1] == "X":
+        print("already used!")
+        line, column, answer = int(input("enter line :")), int(input("enter column : ")), input("X,O :")
+
     game[line - 1][column - 1] = answer.upper()
     print(f"{line1}\n{line2}\n{line3}")
     round_number = i
